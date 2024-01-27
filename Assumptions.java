@@ -1,0 +1,31 @@
+package junitTestScripts;
+import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.Test;
+public class Assumptions {
+	@RepeatedTest(3)
+	@Test
+	public void Assumtions()
+	{
+		// Condition Assumed
+		boolean isDBServerUp= true;
+		
+		Assumptions.assumeTrue(isDBServerUp);
+		// the test case will aborted as the assumption is not true
+		
+		System.out.println("execute the tests");
+	}
+	@Test
+	public void AssumtionsDemo2()
+	{
+		// Condition Assumed
+		boolean isDBServerUp= false;
+		
+		Assumptions.assumeFalse(isDBServerUp);
+		// the test case will aborted as the assumption is not true
+		
+		System.out.println("Don't execute test");
+	}
+
+
+
+}
